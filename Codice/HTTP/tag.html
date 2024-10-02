@@ -1,0 +1,46 @@
+<!-- indica che il documento utilizza la versione più recente di html -->
+<!DOCTYPE html>
+
+<!-- tag che indica il linguaggio naturale utilizzato nel documento. Questo tag, html, va chiuso -->
+<html lang="it">
+  <!--
+    <head></head> è il primo tag figlio diretto di html.   
+    intestazione del documento che riporta informazione sulla pagina o sulle relazioni con altri documenti. 
+    In questa parte è riportato il titolo (<title> </title>) che sarà mostrato nel tab della finestra del browser 
+    e il charset (<metacharset=""/>) in uso. 
+    -->
+  <head>
+    <!-- titolo del documento. Per ogni documento, si ha un solo title -->
+    <title>Titolo</title>
+
+    <!-- 
+     unico all’interno del documento. 
+     Scopo di indicare il path base del documento che servirà per risolvere gli URL relativi,
+     sia in termini di href che di target 
+     -->
+    <base href="http://www.w3schools.com/images/" target="_blank" />
+
+    <!-- 
+     elemento usato per creare relazioni tra il documento e altri documenti o risorse.
+     Utilizzo principale = creare la relazione con il CSS usato dal documento.
+     -->
+    <link rel="stylesheet" type="text/css" href="theme.css" />
+
+    <style>
+      h1 {
+        color: red;
+      }
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <!-- <body></body>: 
+   corpo del documento che racchiude il vero e proprio contenuto della pagina
+   -->
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+  </body>
+</html>

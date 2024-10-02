@@ -1,0 +1,16 @@
+/* va sempre il ; prima della chiusura della graffa */
+h1 {
+  color: blue;
+}
+
+h1#id {
+  color: red;
+}
+
+body {
+  font-size: 20;
+}
+p:first_letter {
+  font-size: 300%;
+  float: left;
+}

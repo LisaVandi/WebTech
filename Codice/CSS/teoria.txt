@@ -1,0 +1,45 @@
+Glifo = entità tipografica che realizza la rappresentazione grafica di un font
+
+Font = insieme di glifi caratterizzati da uno stile grafico e progettato per svolgere una determinata funzione.
+ - classificabili in base alla larghezza occupata dai singoli glifi: 
+    - proporzionale: se i glifi hanno lunghezza variabile
+    - monospace: se i glifi hanno larghezza fissa
+ - classificabili in base alle grazie, cioè allungamenti ortogonali delle estremità di un glifo: 
+    - sans serif: i glifi non hanno le grazie
+    - serif: i glifi hanno le grazie 
+
+HTML vs CSS:
+- HTML serve per definire il contenuto senza fornire indicazioni su come presentarlo.
+- CSS serve per definire come il contenuto deve essere presentato
+
+HTML con CSS:
+1. Posizionato presso il tag di riferimento (foglio di stile inline, attraverso l’attributo style)
+2. Posizionato nel tag <style> (foglio di stile interno, nell’header del documento)
+3. Importato dal tag <style> (foglio di stile esterno importato, nell’header del documento)
+4. Indicato dal tag <link> (foglio di stile esterno, nell’header del documento)
+
+CONFLITTI DI STILE:
+Ad uno stesso elemento possono essere applicate delle regole i cui valori sono in conflitto.
+Esempio:
+div#provaID{ background-color: red;}
+div.provaClasse{ background-color: blue;}
+div{background-color: green; }
+<div id=‘provaID’ class=‘provaClasse’></div>
+
+IMPORTANZA DELLA DICHIARAZIONE: 
+- si può aggiungere ad una dichiarazione la keyword !important --> precedenza sulle altre dichiarazioni
+p { font-size: 18pt !important }
+
+SPECIFICITÀ DEL SELETTORE (= tag di HTML):
+- è data da una quadrupla xywz, in cui:
+  - x = 1 se la dichiarazione è nell'attributo <style>, 0 altrimenti
+  - y = numero di id specificati nel selettore
+  - w = numero di classi, attributi e pseudo-classi specificati nel selettore
+  - z = numero di elementi e di pseudo-elementi specificati nel selettore.
+Ad esempio: 
+ - li (=list item)--> x = 0, y = 0, w = 0, z = 1 => 1
+ - nav ul li a[href=‘/home’] --> x = 0, y = 0, w = 1, z = 4 => 14
+ - style="li a" --> x = 1, y = 0, w = 0, z = 2 => 1002
+
+DIMENSIONE DEL CONTENUTO (BOX MODEL):
+- definibile tramite proprietà width e height
