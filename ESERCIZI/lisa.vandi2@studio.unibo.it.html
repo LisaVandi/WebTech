@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>Preparazione compito - Esercizio HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header><h1>Contatti</h1></header>
+
+    <main>
+      <form action="#" method="GET">
+        <fieldset>
+          <legend>Informazioni Anagrafiche</legend>
+          <ul>
+            <li>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome">
+            </li>
+            <li>
+              <label for="cognome">Cognome:</label>
+              <input type="text" id="cognome" name="cognome">
+            </li>
+            <li>
+              <label for="cf">Codice Fiscale:</label>
+              <input type="text" id="cf" name="cf">
+            </li>
+            <li>
+              <label for="data_nascita">Data di nascita:</label>
+              <input type="date" id="data_nascita" name="data_nascita">
+            </li>
+            <li>
+              <label for="luogo_nascita">Luogo di nascita:</label>
+              <input type="text" id="luogo_nascita" name="luogo_nascita">
+            </li>
+            <li>
+              <label for="indirizzo">Indirizzo:</label>
+              <input type="text" id="indirizzo" name="indirizzo">
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferenze</legend>
+          <ul>
+            <li>
+                <p>Assicurazione:</p>
+                <input type="radio" id="primo_livello" name="assicurazione" value="primo_livello">
+                <label for="primo_livello">Primo Livello</label><br>
+  
+                <input type="radio" id="secondo_livello" name="assicurazione" value="secondo_livello">
+                <label for="secondo_livello">Secondo Livello</label><br>
+            
+                <input type="radio" id="terzo_livello" name="assicurazione" value="terzo_livello">
+                <label for="terzo_livello">Terzo Livello</label>
+            </li>          
+
+            <li>
+              <label for="mezzo_preferito">Mezzo Preferito:</label>
+              <select id="mezzo_preferito" name="mezzo_preferito" >
+                <option value="automobile">Automobile</option>
+                <option value="moto">Moto</option>
+                <option value="bicicletta">Bicicletta</option>
+                <option value="monopattino">Monopattino</option>
+              </select>
+            </li>
+
+            <li>
+              <input type="checkbox" id="automunito" name="automunito" value="automunito">
+              <label for="automunito">Sono automunito</label>
+            </li>
+
+            <li>
+              <label for="descrizione">Descrizione</label><br>
+              <textarea id="descrizione" name="descrizione" rows="4" cols="50"></textarea>
+            </li>
+          </ul>
+        </fieldset>
+        
+        <button type="submit">Invia</button>
+        <button type="reset">Cancella</button>
+      </form>
+    </main>
+  </body>
+</html>
