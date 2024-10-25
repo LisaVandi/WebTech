@@ -1,0 +1,322 @@
+/* I browser possono usare fogli di reset, che hanno l'obiettivo di
+   eliminare tutte le regole di stile del browser. 
+   Al posto dei fogli, si possono usare anche regole di reset. 
+   La virgola indica che si applica tale regola a entrambi i selettori. */
+body,
+header,
+h1,
+h2,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+aside img {
+  /* di default: 
+     imposta tutta la larghezza delle immagini aside a 50 pixel
+     Serve a evitare che le immagini si vedano giganti. */
+  width: 50px;
+}
+
+/* 1. Il body deve avere come colore di sfondo e4e4e4, 
+      mentre header e footer rgb(54,54,54). 
+*/
+body {
+  background-color: #e4e4e4;
+}
+
+/* MAI USARE ID E CLASSI CON IL SELETTORE. 
+   Si usano le relazioni di discendenza:
+   - lo spazio serve per rappresentare la discendenza
+   - il > per i figli diretti. */
+body > header,
+body > footer {
+  background-color: rgb(54, 54, 54);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  /* padding = spazio tra inizio del contenuto e il bordo. L'ordine è sempre top-rigth-bottom-left.
+     margine = spazio tra bordo ed esterno. */
+  padding: 20px, 0; /* 20 sopra-sotto, 0 destra-sx*/
+}
+
+/* 2. Il titolo del blog deve essere in Courier New. 
+      Si può fare con: header h1, header > h1, body > header h1, h1 (ok perché è unico all'interno della pagina) */
+body > header > h1,
+body > footer > p {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* 3. Il menù deve avere margini orizzontali entrambi del 5%. 
+      Le relative voci devono occupare il 45% dello spazio, 
+      avere come font il 'Lucida Sans’ e, 
+      al passaggio sul mouse, il colore deve diventare rgb(219, 69,83). */
+nav {
+  /* passo solo due valori perché la consegna parla di margine orizzontale e verticale. 
+     Il margine orizzontale va sempre in %, mentre quello verticale in pixel. */
+  margin: 0 5%;
+}
+
+nav ul {
+  list-style: none; /* per togliere i pallini dalla lista*/
+}
+
+nav ul li {
+  display: inline-block;
+  width: 45%;
+  background-color: rgb(54, 54, 54);
+  text-align: center;
+  margin: 10px 0 0;
+}
+/* odd indica che si prendono i figli dispari, di conseguenza uso margine destro */
+nav ul li:nth-child(odd) {
+  /* il valore di margine si ottiene così: 100 - 45 - 45*/
+  margin-right: 10%;
+}
+
+nav ul li a {
+  /* L'elemento a copre tutto il contenitore, quindi, in qualsiasi punto del list itemi clicchi l'utente, verrà indirizzato.  */
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  /* per la sottolineatura */
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 5px 0;
+}
+
+/* Pseudoclasse: se passo sul link con il mouse, vengono applicate le seguenti regole. */
+nav ul li a:hover,
+article > footer > a:hover,
+aside > section > ul > li > a:hover {
+  color: rgb(219, 69, 83);
+}
+
+/* 4. Il contenuto principale deve avere margini
+orizzontali del 5%. */
+body main {
+  margin: 20px 5% 0;
+}
+
+/* 
+ * Ogni articolo ha:
+ * – come colore di sfondo il bianco con bordo color #cacaca,
+ * – un’immagine di anteprima alta al massimo 200px,
+ * – il titolo, la data e l’autore hanno come font 'Lucida Sans’ mentre il testo ha font Verdana,
+ * – in fondo all’articolo c’è un link sul bottone Leggi tutto. */
+main > article,
+aside,
+main > section {
+  background-color: #fff;
+  border: 1px solid #cacaca; /* colore, bordo, stile*/
+  margin-bottom: 20px;
+}
+
+/* PER I PIXEL DELLE IMMAGINI (cfr. codice html in cui avevamo messo le immagini dentro i div) */
+article > header > div {
+  height: 200px;
+  text-align: center; /* per centrare le immagini, dato che sono elementi testuali */
+}
+
+article > header > div > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+article > header {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+article > header > h2,
+article > header > p {
+  padding: 0 5%;
+}
+article > header > p {
+  font-size: 12px;
+}
+
+article > section {
+  padding: 0 5%;
+  font: 12 px Verdana, Geneva, Tahoma, sans-serif;
+}
+
+article > footer {
+  text-align: right;
+  padding: 20px 5% 5%;
+}
+
+article > footer > a {
+  color: #000;
+  background-color: rgb(221, 221, 221);
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* La tabella deve occupare il 100% dello spazio a
+disposizione (80% per schermi grandi). 
+Non ci devono essere spazi tra i bordi, che devono essere collassati. */
+main > section,
+form {
+  padding: 20px 5%;
+}
+
+main > section > h2,
+form > h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0 0 20px;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0; /* per eliminare spazi */
+  border-collapse: collapse; /* per collassare i doppi bordi in uno unico. */
+}
+
+table td,
+table th {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 5px 0;
+}
+
+table th {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+form ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 10%;
+}
+
+form ul li:last-child {
+  margin-bottom: 20px;
+}
+
+form ul li label {
+  /* è un elemento di linea => per assegnarne una larghezza, la si rende di blocco */
+  display: inline-block;
+  width: 50%;
+}
+
+form ul li input:not([type="submit"]) {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* selettore di attributo: seleziono l'input di submit */
+form ul li input[type="submit"]:hover {
+  color: rgb(219, 69, 83);
+  cursor: pointer;
+}
+
+/* 
+5. Per quanto riguarda i post popolari, l’immagine è floating a sinistra 
+ed è larga 50px. 
+Al passaggio del mouse sul titolo, questo deve diventare color rgb(219, 69,83). 
+*/
+aside {
+  margin: 0 5% 25px;
+  /* per il margine verticale (terzo valore), non si fa la somma, ma i margini vengono collassati: viene considerato solo il margine con valore massimo.
+  Quindi, se ad esempio poi impostassimo a 20px il margin-top del footer, il margine tra loro sarebbe di 100px, e non 120. */
+  box-sizing: border-box;
+}
+
+aside > section {
+  padding: 20px 5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+aside > section > h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* per togliere i puntatori alla lista */
+aside > section > ul {
+  list-style-type: none;
+}
+
+aside > section > ul > li {
+  margin-bottom: 10px;
+}
+
+aside > section > ul > li > img {
+  float: left;
+  /* usare display per l'allineamento: problema = codice HTML (spazi, ecc). 
+  Float invece non viola il codice HTML. */
+  width: 50px;
+  margin-right: 5px;
+}
+
+aside > section > ul > li > a {
+  text-decoration: none;
+  font-size: 12px;
+  color: black;
+}
+
+/* 6. In casi di schermi con larghezza maggiore o
+uguale a 768px, il layout deve cambiare e
+diventare come quello visibile nell’immagine
+screen/desktop.png*/
+
+/* MEDIA QUERY: condizione per gestire lo schermo grande. Infatti, per ora, il sito è mobile-first. 
+  La soglia di 768px viene utilizzata come punto di interruzione per passare dal layout mobile 
+  a un layout per tablet o schermi più grandi. 
+  QUindi, la condizione della media-query consente di comprendere con che approccio è stato modellato il sito. */
+@media screen and (min-width: 768px) {
+  nav {
+    margin: 0 10%;
+  }
+
+  /* 7. Il contenuto principale e le sidebar devono
+  essere affiancati. 
+  Il primo deve occupare il 50% della pagina, 
+  il secondo il 25% 
+  e devono essere separati da uno spazio pari al 5% della pagina */
+
+  /* 100 - dimensioni list item deve essere un numero divisibile per 3, sennò non si riesce a dare un margine uguale a tutte le spaziature. */
+  /* con 25, i link sono tutti attaccati senza spaziature tra loro => deve essere meno di 25%. */
+  nav ul li {
+    width: 19%; /* 19 * 4 = 76 => 100 -76 = 24, divisibile per 3. */
+    /* margin-right: 8%;  anche l'ultimo lo ha => 108% */
+  }
+  /* seleziono tutti gli elementi che non sono l'ultimo */
+  nav ul li:not(:last-child) {
+    margin-right: 8%;
+  }
+
+  /* elementi di blocco posizionati uno sotto l'altro => per allinearli, li rendo di blocco. 
+  ATTENZIONE! Il testo viene allineato sempre in basso. */
+  main,
+  aside {
+    display: inline-block;
+    vertical-align: top;
+  }
+  main {
+    width: 50%;
+    margin: 20px 5% 0 10%;
+  }
+
+  aside {
+    width: 25%;
+    margin: 20px 10% 0 0;
+  }
+
+  table {
+    width: 80%;
+    /* è un elemento di blocco => per allineare, si usa il margine e non text-alignment: center*/
+    margin: 0 10%; /* 10 perché 100 - 80 = 20 => 20 / 2 = 10 (destra e sinistra) */
+  }
+}
+
+/* padidng bordi margini e width per la larghezza orizzontale (che deve essere 100). */
