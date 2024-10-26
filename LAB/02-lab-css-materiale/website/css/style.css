@@ -79,8 +79,7 @@ nav ul li a {
   width: 100%;
   height: 100%;
   color: #fff;
-  /* per la sottolineatura */
-  text-decoration: none;
+  text-decoration: none;  /* per la sottolineatura */
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   padding: 5px 0;
@@ -201,7 +200,7 @@ form ul li:last-child {
 }
 
 form ul li label {
-  /* è un elemento di linea => per assegnarne una larghezza, la si rende di blocco */
+  /* è un elemento di linea => per assegnarne una larghezza, lo si rende di blocco */
   display: inline-block;
   width: 50%;
 }
