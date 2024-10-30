@@ -1,20 +1,19 @@
 /* General Rule */
 body {
-    margin:0;
+    margin: 0;
     padding: 0;
     font-family: monospace;
     font-size: 100%;
 }
 
 header, nav {
-    background: linear-gradient(135deg, pink, yellow, pink, purple);
+    background: linear-gradient(to bottom right, pink, yellow, pink, purple);
 }
 
 header {
     color: purple;
     text-align: right;
     width: 100%;
-    /* aggiusta */
     padding: 20px;
     margin: 10px 0;
     border-bottom: 3px solid purple;
@@ -22,9 +21,8 @@ header {
 
 nav {
     width: 15%; 
-    /* aggiusta */ 
     margin: 10px 0;
-    padding: 5px;
+    padding: 20px;
     border-top: 3px solid purple; 
     border-bottom: 3px solid purple;
 }
@@ -33,6 +31,7 @@ nav ul {
     list-style-type: square;
     text-align: left;
     line-height: 2;
+    padding-left: 15px;
 }
 
 nav ul li a {
@@ -40,19 +39,19 @@ nav ul li a {
 }
 
 nav:hover{
-    background: linear-gradient(45deg, purple, pink, yellow, pink);
+    background: linear-gradient(to bottom right, purple, pink, yellow, pink);
 }
 
 nav ul li a:hover{
  background-color: purple;
  color: white;
  font-weight: bold;
- padding: 1%;
+ padding: 3px;
 }
 
 aside {
     width: 20%;
-    margin: 10px 0;
+    padding: 10px;
 }
 
 aside > p {
@@ -60,10 +59,9 @@ aside > p {
 }
 
 section {
-    width:50%;
-    /* margin e padding! */
-    padding:10px;
-    margin:10px 0;
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
 }
 
 section p {
@@ -71,9 +69,8 @@ section p {
     color: black;
 }
 
-
 footer {
-    background: linear-gradient(290deg, pink, yellow, pink, purple);
+    background: linear-gradient(to top left, pink, yellow, pink, purple);
     margin: 10px 0;
     padding: 10px;
     width: 100%;
@@ -84,6 +81,7 @@ footer > p {
     color: purple;
     text-align: center;
     font-size: 80%;
+    margin: 0;
 }
 
 /* Layout generale per affiancare nav, section e aside */
